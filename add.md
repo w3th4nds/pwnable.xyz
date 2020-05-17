@@ -8,6 +8,7 @@ Well, we have complete control of this address because `rax` contains our 3rd ar
 That means:
 * We control **what** we want to write (result = `rdx`+`rcx`)
 * We control **where** to write it (`rax`)  
+
 So, we can set the address of `win` function as the return address of `main`.
 
 I set a breakpoint to see the `rbp` value when the result is stored (0x4008c3): **0x7fffffffdf50**  
@@ -21,8 +22,9 @@ Quick mafs there:
 => rax - 12 = 1  
 => rax = 13  
 
-`payload = win_addr + 0 + 13`
+`payload = win_addr + 0 + 13`  
 
+### Exploit  
 ```python
 #!/usr/bin/python3
 from pwn import *
