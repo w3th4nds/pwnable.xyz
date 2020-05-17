@@ -11,8 +11,8 @@ That means:
 
 So, we can set the address of `win` function as the return address of `main`.
 
-I set a breakpoint to see the `rbp` value when the result is stored (0x4008c3): **0x7fffffffdf50**  
-I set a breakpoint at the ret address of main (0x40090b): **`rsp` = 0x7fffffffdf58**  
+* Set a breakpoint to see the `rbp` value when the result is stored (0x4008c3): **0x7fffffffdf50**  
+* Set a breakpoint at the ret address of main (0x40090b): **`rsp` = 0x7fffffffdf58**   
 `0x7fffffffdf58 - 0x7fffffffdf50 = 0x8` which means if we can make this `[rbp+rax*8+var_60]` have the value `rbp + 0x8`,
 we will have overwritten the ret address of main with `win`.  
 
