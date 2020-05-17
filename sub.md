@@ -1,6 +1,6 @@
 This challenge takes 2 **unsigned integers** as input and checks:
 `num1 < 0x1336` && `num2 < 0x1336` and in order to execute `"cat flag"`: `num1 - num2 == 0x1337`.
-That means we can use a negative number so that `-` - `-` = `+`.
+That means we can use a negative number so that `"-"` - `"-"` = `"+"`.  
 Convert hex to decimal and numbers 4918 and -1 give us the result we want. 
 
 ## Exploit
